@@ -1,4 +1,3 @@
-
 /* --- HACKER OVERRIDE CSS --- */
 body {
     background-color: #000 !important;
@@ -11,14 +10,14 @@ body {
     align-items: center;
 }
 
-/* Scanline Overlay Effect */
+/* Scanline Overlay Effect - Fixed to stay in background */
 body::before {
     content: " ";
     position: fixed;
     top: 0; left: 0; bottom: 0; right: 0;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
                 linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-    z-index: 100;
+    z-index: -1; 
     background-size: 100% 3px, 3px 100%;
     pointer-events: none;
 }
@@ -26,6 +25,7 @@ body::before {
 .header {
     text-align: center;
     margin-bottom: 30px;
+    position: relative;
 }
 
 /* PROFILE IMAGE STYLE */
@@ -51,6 +51,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative;
 }
 
 .link-item {
@@ -101,6 +102,7 @@ footer {
     font-size: 0.7rem;
     letter-spacing: 2px;
     opacity: 0.6;
+    position: relative;
 }
 
 /* Simple Glitch Animation on hover */
